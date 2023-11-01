@@ -16,10 +16,16 @@ import java.util.Arrays;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.zeromq.SocketType;
+import org.zeromq.Utils;
+import org.zeromq.ZFrame;
+import org.zeromq.ZMQ;
 import org.zeromq.ZMQ.Context;
 import org.zeromq.ZMQ.Socket;
 import org.zeromq.ZMQ.Socket.Mechanism;
 
+import org.zeromq.ZMQException;
+import org.zeromq.ZMsg;
 import zmq.ZError;
 import zmq.msg.MsgAllocator;
 import zmq.msg.MsgAllocatorDirect;

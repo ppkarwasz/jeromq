@@ -3,7 +3,7 @@ package org.zeromq;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.zeromq.auth.TestUtils;
+import org.zeromq.test.auth.TestUtils;
 
 import java.io.File;
 import java.io.IOException;

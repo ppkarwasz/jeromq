@@ -13,12 +13,14 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.zeromq.timer.TimerHandler;
+import org.zeromq.timer.ZTimer;
 import org.zeromq.timer.ZTimer.Timer;
 
 public class ZTimerTest
 {
     private final AtomicLong    time = new AtomicLong();
-    private final ZTimer        timers = new ZTimer(time::get);
+    private final ZTimer timers = new ZTimer(time::get);
     private AtomicBoolean invoked = new AtomicBoolean();
 
     private final TimerHandler handler = args -> {

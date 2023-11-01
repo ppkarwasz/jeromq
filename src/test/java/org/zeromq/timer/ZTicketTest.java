@@ -13,12 +13,14 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.zeromq.timer.TimerHandler;
+import org.zeromq.timer.ZTicket;
 import org.zeromq.timer.ZTicket.Ticket;
 
 public class ZTicketTest
 {
     final AtomicLong      time    = new AtomicLong();
-    private ZTicket       tickets = new ZTicket(time::get);
+    private ZTicket tickets = new ZTicket(time::get);
     private AtomicInteger invoked = new AtomicInteger();
 
     private final TimerHandler handler = args -> {

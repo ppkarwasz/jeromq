@@ -19,7 +19,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.junit.Test;
+import org.zeromq.SocketType;
+import org.zeromq.Utils;
+import org.zeromq.ZContext;
 import org.zeromq.ZMQ.Socket;
+import org.zeromq.ZMQException;
+import org.zeromq.ZMsg;
+import org.zeromq.ZPoller;
 import org.zeromq.ZPoller.EventsHandler;
 import org.zeromq.ZPoller.ItemCreator;
 import org.zeromq.ZPoller.ItemHolder;
@@ -131,7 +137,7 @@ public class TestZPoller
 
         try (ZContext context = new ZContext();
              ZPoller poller = new ZPoller(context);
-             ZMQ.Socket receiver = context.createSocket(SocketType.PULL)) {
+             Socket receiver = context.createSocket(SocketType.PULL)) {
             context.setLinger(5000);
             final Server client = new Server(context, port);
             client.start();

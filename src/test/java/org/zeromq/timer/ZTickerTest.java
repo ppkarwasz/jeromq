@@ -9,6 +9,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.zeromq.timer.TimerHandler;
+import org.zeromq.timer.ZTicker;
 import org.zeromq.timer.ZTicket.Ticket;
 import org.zeromq.timer.ZTimer.Timer;
 

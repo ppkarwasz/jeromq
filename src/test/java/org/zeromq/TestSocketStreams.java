@@ -4,6 +4,10 @@ import java.io.IOException;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.zeromq.SocketType;
+import org.zeromq.Utils;
+import org.zeromq.ZMQ.Context;
+import org.zeromq.ZMQ.Socket;
 
 @Ignore
 public class TestSocketStreams
@@ -13,9 +17,9 @@ public class TestSocketStreams
     {
         int port = Utils.findOpenPort();
         try (
-                final ZMQ.Context ctx = new ZMQ.Context(1);
-                final ZMQ.Socket pull = ctx.socket(SocketType.PULL);
-                final ZMQ.Socket push = ctx.socket(SocketType.PUSH)) {
+                final Context ctx = new Context(1);
+                final Socket pull = ctx.socket(SocketType.PULL);
+                final Socket push = ctx.socket(SocketType.PUSH)) {
             pull.bind("tcp://*:" + port);
             push.connect("tcp://127.0.0.1:" + port);
 
@@ -29,9 +33,9 @@ public class TestSocketStreams
     {
         int port = Utils.findOpenPort();
         try (
-                final ZMQ.Context ctx = new ZMQ.Context(1);
-                final ZMQ.Socket pull = ctx.socket(SocketType.PULL);
-                final ZMQ.Socket push = ctx.socket(SocketType.PUSH)) {
+                final Context ctx = new Context(1);
+                final Socket pull = ctx.socket(SocketType.PULL);
+                final Socket push = ctx.socket(SocketType.PUSH)) {
             pull.bind("tcp://*:" + port);
             push.connect("tcp://127.0.0.1:" + port);
 

@@ -11,7 +11,7 @@ import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.zeromq.SelectorProviderTest.DefaultSelectorProviderChooser;
+import org.zeromq.test.SelectorProviderTest.DefaultSelectorProviderChooser;
 import org.zeromq.SocketType;
 import org.zeromq.ZContext;
 import org.zeromq.ZMQ.Socket;

@@ -3,6 +3,10 @@ package org.zeromq;
 import java.io.IOException;
 
 import org.junit.Test;
+import org.zeromq.SocketType;
+import org.zeromq.Utils;
+import org.zeromq.ZContext;
+import org.zeromq.ZMQ;
 import org.zeromq.ZMQ.Context;
 import org.zeromq.ZMQ.Socket;
 
@@ -38,9 +42,9 @@ public class TestEvents
     public void testEventConnected()
     {
         try (ZContext context = new ZContext(1);
-            Socket helper = context.createSocket(SocketType.REQ);
-            Socket socket = context.createSocket(SocketType.REP);
-            Socket monitor = context.createSocket(SocketType.PAIR)
+             Socket helper = context.createSocket(SocketType.REQ);
+             Socket socket = context.createSocket(SocketType.REP);
+             Socket monitor = context.createSocket(SocketType.PAIR)
         ) {
             int port = helper.bindToRandomPort("tcp://127.0.0.1");
 

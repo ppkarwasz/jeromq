@@ -8,6 +8,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.zeromq.SocketType;
+import org.zeromq.ZContext;
+import org.zeromq.ZFrame;
+import org.zeromq.ZMQ;
 import org.zeromq.ZMQ.Socket;
 
 public class ZFrameTest
